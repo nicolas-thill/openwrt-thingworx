@@ -1,0 +1,46 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -503,21 +503,21 @@ else()
+ endif()
+ 
+ # Has the caller specified an external include path?
+-if("$ENV{THINGWORX_CSDK_OPENSSL_INCLUDE_DIR}" STREQUAL "")
++if("${THINGWORX_CSDK_OPENSSL_INCLUDE_DIR}" STREQUAL "")
+ 	if(NOT ${OPENSSL_PLATFORM_DIR} STREQUAL "")
+ 		set(OPENSSL_INCLUDE_DIR "${OPENSSL_PLATFORM_DIR}/include")
+ 	endif()
+ else()
+-	set(OPENSSL_INCLUDE_DIR "$ENV{THINGWORX_CSDK_OPENSSL_INCLUDE_DIR}")
++	set(OPENSSL_INCLUDE_DIR "${THINGWORX_CSDK_OPENSSL_INCLUDE_DIR}")
+ endif()
+ 
+ # Has the caller specified an external library path?
+-if("$ENV{THINGWORX_CSDK_OPENSSL_LIB_DIR}" STREQUAL "")
++if("${THINGWORX_CSDK_OPENSSL_LIB_DIR}" STREQUAL "")
+ 	if(NOT ${OPENSSL_PLATFORM_DIR} STREQUAL "")
+ 		set(OPENSSL_LIB_DIR ${OPENSSL_PLATFORM_DIR}/lib)
+ 	endif()
+ else()
+-	set(OPENSSL_LIB_DIR "$ENV{THINGWORX_CSDK_OPENSSL_LIB_DIR}")
++	set(OPENSSL_LIB_DIR "${THINGWORX_CSDK_OPENSSL_LIB_DIR}")
+ endif()
+ 
+ # Specify the platform-dependent name of the SSL and encryption libraries.
+@@ -614,7 +614,7 @@ else()
+ endif()
+ 
+ # Has the caller specified an external OpenSSL binary (Windows/UWP only) path?
+-if("$ENV{THINGWORX_CSDK_OPENSSL_BIN_DIR}" STREQUAL "")
++if("${THINGWORX_CSDK_OPENSSL_BIN_DIR}" STREQUAL "")
+ 	if(${PLATFORM} STREQUAL "win32" OR ${PLATFORM} STREQUAL "win64")
+ 		set(OPENSSL_BIN_DIR ${OPENSSL_PLATFORM_DIR}/bin)
+ 	elseif(${PLATFORM} STREQUAL "uwp-arm")
+@@ -667,7 +667,7 @@ if("$ENV{THINGWORX_CSDK_OPENSSL_BIN_DIR}
+ 		endif()
+ 	endif()
+ else()
+-	set(OPENSSL_BIN_DIR "$ENV{THINGWORX_CSDK_OPENSSL_BIN_DIR}")
++	set(OPENSSL_BIN_DIR "${THINGWORX_CSDK_OPENSSL_BIN_DIR}")
+ endif()
+ 
+ # Specify platform-dependent name of the SSL and encryption binaries.
