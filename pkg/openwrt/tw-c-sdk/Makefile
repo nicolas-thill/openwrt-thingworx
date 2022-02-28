@@ -12,8 +12,8 @@ PKG_NAME:=tw-c-sdk
 PKG_VERSION:=2.2.12.1052
 PKG_RELEASE:=1
 
-PKG_SOURCE:=C-SDK-$(subst .,-,$(PKG_VERSION)).zip
-PKG_SOURCE_URL:=https://tpg-twxdevzone.s3.amazonaws.com/files/media/brewmaster/trialeditions/downloads/9_1/sdk/
+PKG_SOURCE:=C-SDK-2_2_12.zip
+PKG_SOURCE_URL:=https://developer.thingworx.com/-/media/developerportal/SDK_Files/
 PKG_HASH:=9ff8321758d38258d594ad4db613aad2bcce340723457fd94140d5ea3a4a12a8
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/c-sdk-$(PKG_VERSION)-development
